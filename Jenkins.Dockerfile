@@ -8,7 +8,6 @@ ENV SSH_PRIVATE_FILE_PATH=/home/jenkins/.ssh/ultimate_ssh_key
 RUN git config --global user.email "you@example.com" && \
     git config --global user.name "Your Name"
 COPY jobs /home/jobs
-COPY pipelines /home/pipelines
 USER root
 
 RUN apt-get update
