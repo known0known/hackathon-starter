@@ -7,6 +7,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh '''
+                    ls
+                    buildah build -f ./Dockerfile .
+                '''
             }
         }
         stage('Test') {
