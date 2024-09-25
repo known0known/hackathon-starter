@@ -1,26 +1,11 @@
 pipeline {
-    agent any
-
-    options { disableConcurrentBuilds() }
-
+    agent {
+        docker { image 'node:20.17.0-alpine3.20' }
+    }
     stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-                sh '''
-                    ls
-                    buildah build -f ./Dockerfile .
-                '''
-            }
-        }
         stage('Test') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                sh 'node --version'
             }
         }
     }
