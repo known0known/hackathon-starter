@@ -37,6 +37,7 @@ credentials:
               password: password
 jobs:
   - file: /home/jobs/secondjob.groovy
+  - file: /home/jobs/first.groovy
 
 unclassified:
   # scmGit:
