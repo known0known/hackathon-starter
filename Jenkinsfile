@@ -2,7 +2,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'buildah build -f Dockerfile .'
+                sh 'buildah bud -f Dockerfile -t my-image:latest .'
             }
         }
     }
