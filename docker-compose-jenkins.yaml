@@ -9,8 +9,3 @@ services:
       - 8090:8080
     restart: always
     privileged: true
-    volumes:
-      - type: bind
-        source: ./secrets/private
-        target: /home/jenkins/.ssh/
-        read_only: true
