@@ -16,7 +16,6 @@ multibranchPipelineJob('hackathon-starter-multibranch-pipeline') {
         }
     }
 
-
     triggers {
         cron('* * * * *')
     }
