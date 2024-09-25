@@ -1,13 +1,13 @@
-multibranchPipelineJob('example-multibranch-pipeline') {
+multibranchPipelineJob('hackathon-starter-multibranch-pipeline') {
     branchSources {
         git {
+            id('1')
             remote('https://github.com/known0known/hackathon-starter.git')
-            includes('develop master')  // Only include develop and master branches
         }
     }
     orphanedItemStrategy {
         discardOldItems {
-            numToKeep(0)  // Number of old branches to keep
+            numToKeep(10)  // Number of old branches to keep
         }
     }
     factory {
@@ -15,4 +15,10 @@ multibranchPipelineJob('example-multibranch-pipeline') {
             scriptPath('Jenkinsfile')  // Path to Jenkinsfile in the repo
         }
     }
+
+    triggers {
+//        scm('H/15 * * * *')  // Poll SCM every 15 minutes
+        cron('* * * * *')
+    }
+
 }

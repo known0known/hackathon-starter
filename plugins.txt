@@ -88,3 +88,6 @@ workflow-step-api
 workflow-support
 configuration-as-code
 job-dsl
+xml-job-to-job-dsl
+pollscm
+multibranch-scan-webhook-trigger
