@@ -54,3 +54,6 @@ build_jenkins(){
   echo "build jenkins container"
   docker-compose -f docker-compose-jenkins.yaml build
 }
+
+build_jenkins
+install_jenkins
