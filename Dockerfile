@@ -13,6 +13,7 @@ RUN if [ "$NODE_ENV" = "production" ]; then \
     npm install; \
     fi
 
-CMD ["pm2-runtime","app.js"]
+#CMD ["pm2-runtime","app.js"]
 
+RUN npm run test
 EXPOSE 8080

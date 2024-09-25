@@ -1,0 +1,54 @@
+jenkins:
+  systemMessage: Jenkins managed via Configuration as Code
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: admin
+          password: password
+  authorizationStrategy:
+    roleBased:
+      roles:
+        global:
+          - name: "admin"
+            description: "Jenkins administrators"
+            permissions:
+              - "Overall/Administer"
+            entries:
+              - user: "admin"
+          - name: "readonly"
+            description: "Read-only users"
+            permissions:
+              - "Overall/Read"
+              - "Job/Read"
+            entries:
+              - user: "authenticated"
+  crumbIssuer: "standard"
+  numExecutors: 4
+
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - usernamePassword:
+              scope: SYSTEM
+              id: admin
+              username: admin
+              password: password
+jobs:
+  - file: /home/jobs/secondjob.groovy
+
+unclassified:
+  # scmGit:
+  #   addGitTagAction: false
+  #   allowSecondFetch: false
+  #   createAccountBasedOnEmail: true
+  #   disableGitToolChooser: false
+  #   globalConfigEmail: jenkins@domain.local
+  #   globalConfigName: jenkins
+  #   hideCredentials: true
+  #   showEntireCommitSummaryInChanges: true
+  #   useExistingAccountWithSameEmail: false
+  location:
+    url: http://localhost:8090
+    adminAddress: admin@jenkins.com
