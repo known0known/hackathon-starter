@@ -1,0 +1,7 @@
+resources:
+  - ../../base
+
+images:
+  - name: nginx
+    newName: demo
+    newTag: v1.0.0-dev
