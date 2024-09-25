@@ -16,8 +16,8 @@ multibranchPipelineJob('hackathon-starter-multibranch-pipeline') {
         }
     }
 
+
     triggers {
-//        scm('H/15 * * * *')  // Poll SCM every 15 minutes
         cron('* * * * *')
     }
 
