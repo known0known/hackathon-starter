@@ -14,5 +14,5 @@ RUN apt-get update
 RUN apt-get -y install buildah
 RUN apt-get -y install podman
 RUN mkdir -p /home/jenkins/.ssh && chown jenkins:jenkins /home/jenkins/.ssh
-
+RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
 USER jenkins
