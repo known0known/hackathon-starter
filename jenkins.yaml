@@ -25,7 +25,6 @@ jenkins:
               - user: "authenticated"
   crumbIssuer: "standard"
   numExecutors: 4
-
 credentials:
   system:
     domainCredentials:
@@ -37,18 +36,7 @@ credentials:
               password: admin
 jobs:
   - file: /home/jobs/hackathon.groovy
-
 unclassified:
-  # scmGit:
-  #   addGitTagAction: false
-  #   allowSecondFetch: false
-  #   createAccountBasedOnEmail: true
-  #   disableGitToolChooser: false
-  #   globalConfigEmail: jenkins@domain.local
-  #   globalConfigName: jenkins
-  #   hideCredentials: true
-  #   showEntireCommitSummaryInChanges: true
-  #   useExistingAccountWithSameEmail: false
   location:
     url: http://localhost:8090
     adminAddress: admin@jenkins.com
