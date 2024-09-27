@@ -5,7 +5,7 @@ jenkins:
       allowsSignup: false
       users:
         - id: admin
-          password: password
+          password: admin
   authorizationStrategy:
     roleBased:
       roles:
@@ -34,9 +34,9 @@ credentials:
               scope: SYSTEM
               id: admin
               username: admin
-              password: password
+              password: admin
 jobs:
-  - file: /home/jobs/first.groovy
+  - file: /home/jobs/hackathon.groovy
 
 unclassified:
   # scmGit:
